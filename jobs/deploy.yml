@@ -5,7 +5,7 @@ parameters:
   display_name: Upload & deploy *.sppkg to SharePoint app catalog
   # agent pool details (default: MSFT hosted Ubuntu)
   pool: 
-    vmImage: ubuntu-latest
+    vmImage: ubuntu-16.04
   # name of target enviroment deploying to
   target_environment: ''
   # o365 user credentials
