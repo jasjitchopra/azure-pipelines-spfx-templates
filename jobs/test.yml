@@ -15,7 +15,7 @@ jobs:
 - job: ${{ parameters.job_name }}
   displayName: ${{ parameters.display_name }}
   pool:
-    vmImage: ubuntu-latest
+    vmImage: ubuntu-16.04
   steps:
   ##########################################
   ## install dependencies using specified 
