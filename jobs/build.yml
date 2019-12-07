@@ -5,7 +5,7 @@ parameters:
   display_name: SPFx production build & packaging
   # agent pool details (default: MSFT hosted Ubuntu)
   pool: 
-    vmImage: ubuntu-16.04
+    vmImage: jasubuntuagent
   # relative path to the project root if not in root of repo
   working_directory: ''
   # package manager
