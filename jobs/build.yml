@@ -19,7 +19,7 @@ jobs:
   ## install dependencies using specified 
   ##    package manager
   ##########################################
-  - script: npm install --build-from-resource
+  - script: npm install
     displayName: Install dependencies (NPM)
     workingDirectory: ${{ parameters.working_directory }}
     condition: eq('${{ parameters.package_manager }}', 'npm')
