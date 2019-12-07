@@ -21,15 +21,6 @@ jobs:
   ## install dependencies using specified 
   ##    package manager
   ##########################################
-  - script: nvm install 10.17.0
-    displayName: Install Node 10.17.0
-    workingDirectory: ${{ parameters.working_directory }}
-  - script: nvm use 10.17.0
-    displayName: Set current Node version to 10.17.0
-    workingDirectory: ${{ parameters.working_directory }}
-  - script: node -v
-    displayName: Check Node Version
-    workingDirectory: ${{ parameters.working_directory }}  
   - script: npm install
     displayName: Install dependencies (with NPM)
     workingDirectory: ${{ parameters.working_directory }}
