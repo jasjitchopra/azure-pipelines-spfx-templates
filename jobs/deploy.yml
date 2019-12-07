@@ -4,8 +4,7 @@ parameters:
   # friendly name of the job
   display_name: Upload & deploy *.sppkg to SharePoint app catalog
   # agent pool details (default: MSFT hosted Ubuntu)
-  pool: 
-    vmImage: jasubuntuagent
+  pool: jasubuntuagent
   # name of target enviroment deploying to
   target_environment: ''
   # o365 user credentials

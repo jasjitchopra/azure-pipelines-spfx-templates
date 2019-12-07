@@ -4,8 +4,7 @@ parameters:
   # friendly name of the job
   display_name: Execute tests
   # agent pool details (default: MSFT hosted Ubuntu)
-  pool: 
-    vmImage: jasubuntuagent
+  pool: jasubuntuagent
   # relative path to the project root if not in root of repo
   working_directory: 'sample'
   # package manager
@@ -14,8 +13,7 @@ parameters:
 jobs:
 - job: ${{ parameters.job_name }}
   displayName: ${{ parameters.display_name }}
-  pool:
-    vmImage: jasubuntuagent
+  pool: jasubuntuagent
   steps:
   ##########################################
   ## install dependencies using specified 
