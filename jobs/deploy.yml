@@ -30,7 +30,7 @@ jobs:
         ##########################################
         ## install Office 365 CLI
         ##########################################
-        - script: npm install --global @pnp/office365-cli
+        - script: sudo npm install --global @pnp/office365-cli
           displayName: Install Office365 CLI
         ##########################################
         ## login to Office 365 CLI
