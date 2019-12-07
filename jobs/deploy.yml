@@ -30,12 +30,12 @@ jobs:
         ##########################################
         ## install Office 365 CLI
         ##########################################
-        - script: sudo npm install --global @pnp/office365-cli
-          displayName: Install Office365 CLI
+        ##- script: sudo npm install --global @pnp/office365-cli
+        ##  displayName: Install Office365 CLI
         ##########################################
         ## login to Office 365 CLI
         ##########################################
-        - script: spo login ${{ parameters.o365_app_catalog_site_url }} --authType password --userName ${{ parameters.o365_user_login }} --password ${{ parameters.o365_user_password }}
+        - script: o365 spo login ${{ parameters.o365_app_catalog_site_url }} --authType password --userName ${{ parameters.o365_user_login }} --password ${{ parameters.o365_user_password }}
           displayName: Login to Office365
         ##########################################
         ## download previously built *.sppkg
@@ -56,10 +56,10 @@ jobs:
         ##########################################
         ## upload *.sppkg to the target app catalog
         ##########################################
-        - script: spo app add --filePath "$(Pipeline.Workspace)/spfx-package/$(GetSharePointPackage.SpPkgFileName)" --appCatalogUrl ${{ parameters.o365_app_catalog_site_url }} --scope ${{ parameters.o365cli_app_catalog_scope }} --overwrite ${{ parameters.o365cli_spoAppAdd_extra_arguments }}
+        - script: o365 spo app add --filePath "$(Pipeline.Workspace)/spfx-package/$(GetSharePointPackage.SpPkgFileName)" --appCatalogUrl ${{ parameters.o365_app_catalog_site_url }} --scope ${{ parameters.o365cli_app_catalog_scope }} --overwrite ${{ parameters.o365cli_spoAppAdd_extra_arguments }}
           displayName: Upload SharePoint package to Site Collection App Catalog
         ##########################################
         ## 
         ##########################################
-        - script: spo app deploy --name $(GetSharePointPackage.SpPkgFileName) --appCatalogUrl ${{ parameters.o365_app_catalog_site_url }} --scope ${{ parameters.o365cli_app_catalog_scope }} ${{ parameters.o365cli_spoAppDeploy_extra_arguments }}
+        - script: o365 spo app deploy --name $(GetSharePointPackage.SpPkgFileName) --appCatalogUrl ${{ parameters.o365_app_catalog_site_url }} --scope ${{ parameters.o365cli_app_catalog_scope }} ${{ parameters.o365cli_spoAppDeploy_extra_arguments }}
           displayName: Deploy SharePoint package
